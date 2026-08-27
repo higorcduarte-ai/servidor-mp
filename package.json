@@ -2,13 +2,14 @@
   "name": "servidor-pagamento",
   "version": "1.0.0",
   "type": "module",
-  "main": "server.js",
+  "main": "server.mjs",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.mjs"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "mercadopago": "^3.5.1"
+    "mercadopago": "^3.5.1",
+    "resend": "^4.0.0"
   }
 }
