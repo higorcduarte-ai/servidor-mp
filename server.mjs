@@ -9,10 +9,17 @@ app.use(cors());
 
 // Configurações e Chaves
 const ACCESS_TOKEN = 'APP_USR-7625542353139045-082616-c44e20382d21d1e4ad4b7a44a4e25026-283074046';
-const EMAIL_NOTIFICACAO = 'higuinho49@cloud.com'; // <-- DIGITE SEU E-MAIL REAL AQUI
+const EMAIL_NOTIFICACAO = 'seuemail@gmail.com'; // TODO: Coloque aqui o e-mail onde quer receber os avisos
 
 const client = new MercadoPagoConfig({ accessToken: ACCESS_TOKEN });
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+/* =========================================================
+   0. ROTA DE STATUS / PING (Mantém o Render sempre acordado)
+========================================================= */
+app.get('/', (req, res) => {
+  res.status(200).send('Servidor FK Collective Ativo 🚀');
+});
 
 /* =========================================================
    1. CRIAÇÃO DE PREFERÊNCIA COM DADOS COMPLETOS
